@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="900.0" maxWidth="1250.0" minHeight="900.0" minWidth="1250.0" prefHeight="900.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.dietdiary.www.controller.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Файл">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Новый" />
+            <MenuItem mnemonicParsing="false" text="Открыть" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Сохранить" />
+            <MenuItem mnemonicParsing="false" text="Сохранить как…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Настройки…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Выход" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Статистика">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Помощь">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showAboutIt" text="О программе…" />
+          </items>
+        </Menu>
+      </menus>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+    </MenuBar>
+      <AnchorPane prefHeight="37.0" prefWidth="1200.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" text="&lt;&lt;&lt; Предыдущий день">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Сохранить изменения">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Следующий день &gt;&gt;&gt;">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="    Перейти на дату...    ">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="      Статистика дня     ">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Статистика за период">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </AnchorPane>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <HBox layoutX="104.0" layoutY="47.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <VBox prefHeight="868.0" prefWidth="834.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView prefHeight="720.0" prefWidth="450.0">
+                                <columns>
+                                  <TableColumn prefWidth="103.0" text="время" />
+                                  <TableColumn prefWidth="730.0" text="чем заняться" />
+                                </columns>
+                              </TableView>
+                              <Label text="Интересные идеи:">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextArea prefHeight="123.0" prefWidth="834.0" />
+                              <AnchorPane prefHeight="30.0" prefWidth="834.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <AnchorPane prefHeight="30.0" prefWidth="614.0">
+                                             <children>
+                                                <Label prefHeight="25.0" prefWidth="165.0" text="Закрепил привычку:" AnchorPane.bottomAnchor="5.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font></Label>
+                                                <CheckBox layoutX="159.0" layoutY="13.0" mnemonicParsing="false" text="Да / Нет" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="41.0" prefWidth="221.0">
+                                             <children>
+                                                <Label prefHeight="25.0" prefWidth="75.0" text="Вес:" AnchorPane.bottomAnchor="5.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font></Label>
+                                                <TextField prefHeight="25.0" prefWidth="150.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="-0.0">
+                                                   <padding>
+                                                      <Insets bottom="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="2.5" top="5.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="817.0" prefWidth="404.0">
+                     <children>
+                        <VBox prefHeight="848.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="145.0" prefWidth="355.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Утренний блок.">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font></Label>
+                                          <Label text="тренировка:" />
+                                          <TextArea prefHeight="200.0" prefWidth="200.0" text="Разминка для глаз." />
+                                          <Label text="обучение:" />
+                                          <TextArea prefHeight="200.0" prefWidth="200.0" text="Java." />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="440.0" prefWidth="355.0">
+                                 <children>
+                                    <VBox layoutX="73.0" layoutY="66.0" prefHeight="390.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Расчёт Массы-Белков-Жиров-Углеводов-Энергии:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font></Label>
+                                          <Label text="Завтрак." />
+                                          <AnchorPane prefHeight="50.0" prefWidth="345.0">
+                                             <children>
+                                                <VBox prefHeight="118.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                          <Label text="Обед." />
+                                          <AnchorPane prefHeight="50.0" prefWidth="345.0">
+                                             <children>
+                                                <VBox prefHeight="118.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                          <Label text="Полдник." />
+                                          <AnchorPane prefHeight="50.0" prefWidth="345.0">
+                                             <children>
+                                                <VBox prefHeight="118.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                          <Label text="Ужин." />
+                                          <AnchorPane prefHeight="50.0" prefWidth="345.0">
+                                             <children>
+                                                <VBox prefHeight="118.0" prefWidth="355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="25.0" prefWidth="345.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="31.0" prefWidth="135.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                            <TextField prefHeight="31.0" prefWidth="70.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                          <HBox prefHeight="25.0" prefWidth="345.0">
+                                             <children>
+                                                <Label prefWidth="135.0" text="  итого:">
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                <TextField prefWidth="50.0" />
+                                                <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                <TextField prefHeight="31.0" prefWidth="50.0" />
+                                                <TextField prefHeight="31.0" prefWidth="70.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="151.0" prefWidth="345.0">
+                                 <children>
+                                    <VBox prefHeight="283.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Главные задачи дня:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font></Label>
+                                          <TextArea prefHeight="75.0" prefWidth="345.0" />
+                                          <Label text="Результаты дня:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font></Label>
+                                          <TextArea layoutY="76.0" prefHeight="75.0" prefWidth="345.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="145.0" prefWidth="345.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Вечерний блок.">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font></Label>
+                                          <Label text="тренировка:" />
+                                          <TextArea prefHeight="200.0" prefWidth="200.0" text="Вакуум." />
+                                          <Label text="обучение:" />
+                                          <TextArea prefHeight="200.0" prefWidth="200.0" text="Java." />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children></VBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="2.5" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+            </HBox>
+      </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+    </AnchorPane>
+  </children>
+</VBox>
