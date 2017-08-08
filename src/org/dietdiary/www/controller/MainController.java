@@ -2,7 +2,6 @@ package org.dietdiary.www.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
@@ -16,10 +15,11 @@ public class MainController {
             Parent root = FXMLLoader.load(getClass().getResource("../view/aboutIt.fxml"));
             Stage stage = new Stage();
             stage.setTitle("О программе..");
+            stage.setScene(new Scene(root, 325, 90));
             stage.setResizable(false);
-            stage.setScene(new Scene(root, 90, 325));
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
+            stage.initModality(Modality.APPLICATION_MODAL);
+
+            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
             stage.show();
         } catch (IOException e){
             e.printStackTrace();
